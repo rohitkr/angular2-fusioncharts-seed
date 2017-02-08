@@ -31,6 +31,7 @@
     "core-js": "^2.4.1",
     "fusioncharts": "^3.11.3-sr.1",
     "ie-shim": "^0.1.0",
+    "ngx-tabs": "0.0.13",
     "prism": "^1.0.0",
     "prismjs": "^1.6.0",
     "reflect-metadata": "^0.1.3",

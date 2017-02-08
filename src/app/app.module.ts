@@ -7,6 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
+import { CodePrev } from './fusioncharts/codepreview';
+import {TabsModule} from "ngx-tabs";
+import { Ex1 } from './fusioncharts/ex1/ex1';
+import { Ex2 } from './fusioncharts/ex2/ex2';
+import { Ex3 } from './fusioncharts/ex3/ex3';
+import { Ex4 } from './fusioncharts/ex4/ex4';
+import { Ex5 } from './fusioncharts/ex5/ex5';
+import { Ex5a } from './fusioncharts/ex5a/ex5a';
+
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { FusionChartsSample } from './fusioncharts/fusioncharts.component';
@@ -19,6 +28,13 @@ import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
+    Ex1,
+    Ex2,
+    Ex3,
+    Ex4,
+    Ex5,
+    Ex5a,
+    CodePrev,
     AppComponent,
     AboutComponent,
     RepoBrowserComponent,
@@ -34,6 +50,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    TabsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
