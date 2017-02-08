@@ -1,12 +1,14 @@
 import {Component} from '@angular/core';
 
 import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
 import * as Widgets from 'fusioncharts/fusioncharts.widgets';
 import * as Maps from 'fusioncharts/fusioncharts.maps';
 import * as World from 'fusioncharts/maps/fusioncharts.world';
 import * as fint from 'fusioncharts/themes/fusioncharts.theme.fint';
 
+Charts(FusionCharts);
 PowerCharts(FusionCharts);
 Widgets(FusionCharts);
 Maps(FusionCharts);
