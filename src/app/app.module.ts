@@ -15,6 +15,12 @@ import { Ex3 } from './fusioncharts/ex3/ex3';
 import { Ex4 } from './fusioncharts/ex4/ex4';
 import { Ex5 } from './fusioncharts/ex5/ex5';
 import { Ex5a } from './fusioncharts/ex5a/ex5a';
+import { Ex6 } from './fusioncharts/ex6/ex6';
+import { Ex7 } from './fusioncharts/ex7/ex7';
+import { Ex8 } from './fusioncharts/ex8/ex8';
+import { Ex9 } from './fusioncharts/ex9/ex9';
+import { Ex10 } from './fusioncharts/ex10/ex10';
+import { ObservablestudyAppComponent } from './observable/observable.component';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -34,6 +40,13 @@ import { ContactComponent } from './contact/contact.component';
     Ex4,
     Ex5,
     Ex5a,
+    Ex6,
+    Ex7,
+    Ex8,
+    Ex9,
+    Ex10,
+    ObservablestudyAppComponent,
+    
     CodePrev,
     AppComponent,
     AboutComponent,

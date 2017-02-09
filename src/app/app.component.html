@@ -92,19 +92,24 @@
                     <p>Click on a chart to trigger an event in the controller, and update the scope</p>
                 </a>
             
-                <a [routerLink]="['/fusioncharts']" href="#/demos/ex8" class="list-group-item">
+                <a [routerLink]="['/ex8']" href="#/demos/ex8" class="list-group-item">
                     <h4>Update chart attribute from scope</h4>
                     <p>Change a parameter in the scope variable and see it automatically update the chart</p>
                 </a>
             
-                <a href="#/demos/ex9" class="list-group-item">
+                <a [routerLink]="['/ex9']"  href="#/demos/ex9" class="list-group-item">
                     <h4>Separate objects for attributes</h4>
                     <p>Separate objects for chart attributes, dataset and categories</p>
                 </a>
 
-                <a href="#/demos/ex10" class="list-group-item">
+                <a [routerLink]="['/ex10']"  href="#/demos/ex10" class="list-group-item">
                     <h4>Percentage Calculation</h4>
                     <p>Click on a plot to see the percentage value with respect to total</p>
+                </a>
+
+                <a [routerLink]="['/fusioncharts']"  href="#/fusioncharts" class="list-group-item">
+                    <h4>Observable Sample</h4>
+                    <p>This is temporary link to check sample </p>
                 </a>
             </nav>
         </div>
@@ -112,7 +117,7 @@
 
     <div class="col-md-9" ng-controller="DemoController">
         <router-outlet></router-outlet>
-        <!-- <ng-view></ng-view> -->
+        <ng-view></ng-view>
     </div>
 
 

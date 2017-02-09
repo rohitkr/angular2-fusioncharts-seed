@@ -1,9 +1,9 @@
-<div fusioncharts
+<fusioncharts
     width="600" 
     height="400"
-    type="column2d",
-    datasource="{{dataSource}}"
-    ></div>
+    type="column2d"
+    [dataSource]="dataSource"
+    ></fusioncharts>
 <p><a class="btn btn-default" ng-click="changeBackgroundColor()">Change chart background color</a>
 <a class="btn btn-default" ng-click="changeCaptionTextAlignment()">Make Caption text left-aligned</a>
 </p><tabset>
