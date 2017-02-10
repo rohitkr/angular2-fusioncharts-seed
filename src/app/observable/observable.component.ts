@@ -1,68 +1,109 @@
-import {Component} from '@angular/core';
+import {Component, Input, ElementRef, AfterViewInit, OnInit, KeyValueDiffers, SimpleChange} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
+
+import * as FusionCharts from 'fusioncharts';
+
+
+
+import 'rxjs/add/operator/share';
+
+export class NavService {
+    // Data store 
+    private dataStore: any;
+    
+    navChange$: Observable<Object>;
+    private _observer: Observer<Object>;
+    
+    constructor() {
+        this.navChange$ = new Observable(observer => this._observer = observer ).share();
+        this.dataStore = {
+            name: "Rohit",
+            lname: "Kumar"
+        }
+        // share() allows multiple subscribers
+    }
+    
+    changeNav(number) {
+        this.dataStore.name = number;
+
+        this._observer.next(number);
+    }
+    
+    navItem() {
+        return this.dataStore;
+    }
+}
+
 
 @Component({
-    selector: 'ng-view',
-    template: `
-      <b>Angular 2 Component Using Observables!</b>
-     
-      <h6 style="margin-bottom: 0">VALUES:</h6>
-      <div *ngFor="let value of values">: {{ value }}</div>
-      
-      <h6 style="margin-bottom: 0">ERRORs:</h6>
-      <div>Errors: {{anyErrors}}</div>
-      
-      <h6 style="margin-bottom: 0">FINISHED:</h6>
-      <div>Finished: {{ finished }}</div>
-      
-      <button style="margin-top: 2rem;" (click)="init()">Init</button>
-      <button style="margin-top: 2rem;" (click)="init2()">Init2</button>
+    selector: 'obs-comp',
+    template: `obs component, item: {{item.name}}`
+})
+export class ObservingComponent {
+    item: any;
+    subscription: any;
+    constructor(private _navService: NavService) {
+
+    }
+    ngOnChanges() {
+        console.log('changes obs');
+    }
+
+    ngOnInit() {
+        this.item = this._navService.navItem();
+        this.subscription = this._navService.navChange$.subscribe(item => this.selectedNavItem(item));
+    }
+    selectedNavItem(item: Object) {
+        this.item.name = '' + item;
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+}
+
+
+@Component({
+    selector: 'my-nav',
+    template:`
+        <div class="nav-item" (click)="selectedNavItem('John')">nav 1 (Jhon)</div>
+        <div class="nav-item" (click)="selectedNavItem('Michael')">nav 2 (Michael)</div>
+    `,
+})
+export class Navigation {
+    item: {
+        name: "Rohit"
+    };
+    constructor(private _navService: NavService) {
+
+    }
+    ngOnChanges() {
+        console.log('changes Nav');
+    }
+    selectedNavItem(item: string) {
+        console.log('selected nav item ' + item);
+        this._navService.changeNav(item);
+    }
+}
+
+
+@Component({
+    selector: 'my-app',
+    template: `{{title}}
+    <p>
+    <my-nav></my-nav>
+    <button (click)="showObsComp = !showObsComp">toggle ObservingComponent</button>
+    <div *ngIf='showObsComp'>
+        <obs-comp></obs-comp>
+    </div>
     `
 })
-
-export class ObservablestudyAppComponent {
-  
-    private data: Observable<Object>;
-    private values = [];
-    private anyErrors: boolean;
-    private finished: boolean;
-
-    value: number;
-
+export class MyAppComponent {
+    title = "Angular 2 - event delegation";
+    showObsComp = true;
+    ngOnChanges() {
+        console.log('changes MyApp');
+    }
     constructor() {
     }
-
-    init2() {
-        console.log(this.data);
-        this.values.push(40, 50, 70);
-
-    }
-
-
-    init() {
-        var _this = this;
-        this.data = new Observable(observer => {
-            setTimeout(() => {
-                observer.next(42);
-            }, 1000);
-
-            setTimeout(() => {
-                observer.next(43);
-            }, 2000);
-
-            setTimeout(() => {
-                observer.complete();
-            }, 3000);
-        });
-
-
-        let subscription = this.data.subscribe(
-            function (val) {
-                _this.values.push(val);
-                _this.anyErrors = true,
-                _this.finished = true
-            }
-        );
-    }
-
 }

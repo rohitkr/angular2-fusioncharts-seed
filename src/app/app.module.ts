@@ -20,7 +20,7 @@ import { Ex7 } from './fusioncharts/ex7/ex7';
 import { Ex8 } from './fusioncharts/ex8/ex8';
 import { Ex9 } from './fusioncharts/ex9/ex9';
 import { Ex10 } from './fusioncharts/ex10/ex10';
-import { ObservablestudyAppComponent } from './observable/observable.component';
+import { Navigation, NavService, ObservingComponent, MyAppComponent } from './observable/observable.component';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -45,8 +45,9 @@ import { ContactComponent } from './contact/contact.component';
     Ex8,
     Ex9,
     Ex10,
-    ObservablestudyAppComponent,
     
+    Navigation, ObservingComponent, MyAppComponent,
+
     CodePrev,
     AppComponent,
     AboutComponent,
@@ -67,7 +68,9 @@ import { ContactComponent } from './contact/contact.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    GithubService
+    GithubService,
+
+    NavService
   ],
   bootstrap: [ AppComponent ]
 })

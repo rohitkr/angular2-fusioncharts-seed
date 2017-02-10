@@ -11,7 +11,7 @@ import { Ex7 } from './fusioncharts/ex7/ex7';
 import { Ex8 } from './fusioncharts/ex8/ex8';
 import { Ex9 } from './fusioncharts/ex9/ex9';
 import { Ex10 } from './fusioncharts/ex10/ex10';
-import { ObservablestudyAppComponent } from './observable/observable.component';
+import { MyAppComponent } from './observable/observable.component';
 
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -22,7 +22,7 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { ContactComponent } from './contact/contact.component';
 
 export const rootRouterConfig: Routes = [
-  { path: '', redirectTo: 'ex1', pathMatch: 'full' },
+  { path: '', redirectTo: 'ex6', pathMatch: 'full' },
   { path: 'ex1', component: Ex1 },
   { path: 'ex2', component: Ex2 },
   { path: 'ex3', component: Ex3 },
@@ -34,7 +34,7 @@ export const rootRouterConfig: Routes = [
   { path: 'ex8', component: Ex8 },
   { path: 'ex9', component: Ex9 },
   { path: 'ex10', component: Ex10 },
-  { path: 'fusioncharts', component: ObservablestudyAppComponent },
+  { path: 'fusioncharts', component: MyAppComponent },
 
   { path: 'about', component: AboutComponent },
   { path: 'fusioncharts', component: FusionChartsSample },

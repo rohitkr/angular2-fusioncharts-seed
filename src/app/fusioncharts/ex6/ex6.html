@@ -1,16 +1,23 @@
 <fusioncharts
-    width="600" 
-    height="400"
-    type="column2d"
+    width={{width}}
+    height={{height}}
+    type={{type}}
     [dataSource]=dataSource
-    [navChange]=navChange
-    [data]=data
     ></fusioncharts>
-<p><a class="btn btn-default" (click)="updateMyChartData()" >Click me to change data</a></p>
+
+<p><input type="button" value="Click me to change data" class="btn btn-default" (click)="updateMyChartData()" /> </p>
+<p><input type="button" value="Click me to change Caption" class="btn btn-default" (click)="updateChartCaption()" /> </p>
+<p><input type="button" value="Click me to change Type" class="btn btn-default" (click)="updateChartType()" /> </p>
+<p><input type="button" value="Click me to change Width" class="btn btn-default" (click)="updateChartWidth()" /> </p>
+<p><input type="button" value="Click me to change Height" class="btn btn-default" (click)="updateChartHeight()" /> </p>
+
+<div>{{ dataSource.data[2].value }} : {{ dataSource.data[3].value }}</div>
+
+<my-app></my-app>
+
+<!-- 
 <tabset>
-    <tab heading="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
-    <tab heading="Javascript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
+    <tab heading="HTML" title="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
+    <tab heading="JavaScript" title="JavaScript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
 </tabset>
-<div>Random number: {{message}} </div>
-<div>dataStore.data[2].value: {{dataSource.data[2].value}}</div>
-<div>dataStore.data[3].value: {{dataSource.data[3].value}}</div>
+ -->
