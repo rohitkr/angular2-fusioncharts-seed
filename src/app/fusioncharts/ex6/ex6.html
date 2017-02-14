@@ -8,11 +8,11 @@
 <p><a class="btn btn-default" (click)="updateMyChartData()">Click me to change data</a></p>
 
  <tabset>
-    <tab heading="HTML" title="HTML">{{ html }}</tab>
-    <tab heading="JavaScript" title="JavaScript">
+    <tab tabTitle="HTML" title="HTML">{{ html }}</tab>
+    <tab tabTitle="JavaScript" title="JavaScript">
     	<pre class="language-javascript"><code ng-transclude="" class="language-javascript"> {{ js }} </code></pre>
     </tab>
-    <tab heading="JavaScript" title="JavaScript">
+    <tab tabTitle="JavaScript" title="JavaScript">
     	<pre class="language-javascript">
 	    	<code ng-transclude="" class=" language-javascript">
 var test = 'Rohit';

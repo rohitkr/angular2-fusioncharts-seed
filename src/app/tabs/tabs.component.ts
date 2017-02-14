@@ -1,65 +1,35 @@
-import { Component, ContentChildren, ViewChildren, ViewChild, QueryList, AfterContentInit, NgModule, EventEmitter, Output } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { Tab } from './tab';
-
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Tab } from './tabs.interface';
 
 @Component({
-    selector:'tabset',
-    template: `
-    <div>
-	    <ul>
-	        <li *ngFor="let tab of tabset;" (click)="selectTab(tab)">
-	        	{{tab.heading}} {{tab.myChildComponent}} {{tab.tabset}}
-	        </li>
-	    </ul>
-	    <ng-content></ng-content>
-    </div>
-`
+  selector: 'tabset',
+  template: `
+<ul>
+  <li *ngFor="let tab of tabs">
+    <a href="javascript:void(0)"  (click)="selectTab(tab)">{{tab.tabTitle}}</a>
+  </li>
+</ul>
+<ng-content></ng-content>
+  `
 })
-export class Tabsets {
-	@ContentChildren(Tab)
-    tabset: QueryList<Tab>;
 
-    @Output() selected = new EventEmitter();
-
-    // tabs: Tab[] = [];
-
-    selectTab(tab: Tab) {
-    	console.log('selectTab: ', tab);
-	}
-
-   //  addTab(tab: Tab) {
-   //  	console.log(tab);
-
-   //   //    if (this.tabs.length === 0) {
-   //   //       	tab.active = true;
-   //  	// }
-   //  	// this.tabs.push(tab);
-  	// }
-
-  	ngOnInit() {
-    	// console.log(this.tab);
-  	}
-    
-    // constructor(tapsnnn: Tab) {}
-
-  	// ngAfterViewInit(tabs: Tab) {
-  	// 	console.log(tabs);
-  	// }
+export class TabsComponent {
+  
+  tabs:Tab[] = [];
+  @Output() selected = new EventEmitter();
+  
+  addTab(tab:Tab) {
+    if (!this.tabs.length) {
+      tab.selected = true;
+    }
+    this.tabs.push(tab);
+  }
+  
+  selectTab(tab:Tab) {
+    this.tabs.map((tab) => {
+      tab.selected = false;
+    })
+    tab.selected = true;
+    this.selected.emit({selectedTab: tab});    
+  }
 }
-
-
-
-
-@NgModule({
-    imports: [ BrowserModule ],
-    declarations: [
-        Tabsets, Tab
-    ],
-    exports: [
-        Tabsets, Tab
-    ]
-})
-
-export class TabModule {}
-
