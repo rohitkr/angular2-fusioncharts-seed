@@ -4,9 +4,9 @@
     type="column2d"
     [dataSource]="dataSource"
     ></fusioncharts>
-<p><a class="btn btn-default" ng-click="changeBackgroundColor()">Change chart background color</a>
-<a class="btn btn-default" ng-click="changeCaptionTextAlignment()">Make Caption text left-aligned</a>
+<p><a class="btn btn-default" (click)="changeBackgroundColor()">Change chart background color</a>
+<a class="btn btn-default" (click)="changeCaptionTextAlignment()">Make Caption text left-aligned</a>
 </p><tabset>
-    <tab heading="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
-    <tab heading="Javascript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
+    <tab heading="HTML" title="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
+    <tab heading="Javascript" title="Javascript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
 </tabset>

@@ -8,9 +8,16 @@ Charts(FusionCharts);
 @Component({
     selector: 'chart',
     templateUrl: 'ex10.html',
-      styleUrls: [
-          '../ex.css'
-      ]
+    styles: [`
+        .log-pane{
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+    `]
 })
 
 export class Ex10 {
@@ -18,7 +25,7 @@ export class Ex10 {
 
     vm = this;
 
-    logMessage = 'Click on the  plot to see the percentage of a column wrt total';
+    logMessage = 'Hover on the plot to see the percentage of a column wrt total';
 
     // Save the function reference in global object so that FusionCharts link can call 
     // it when called
@@ -29,10 +36,10 @@ export class Ex10 {
             this.logMessage = "Percentage is  " + msg + "% of the total";
         });
     }
-    
-    DataSource = {
+
+    dataSource = {
         "chart": {
-            "caption": "Monthly revenue for last year",
+            "caption": "Monthly r    ue for last year",
             "subCaption": "Harry's SuperMart",
             "xAxisName": "Month",
             "yAxisName": "Revenues (In USD)",
@@ -121,24 +128,27 @@ export class Ex10 {
     total: number
     myDataSource = {}
 
+    getPercentValue() {
+        var _this = this;
+        return (eve,  arg) => {
+            var value = (arg.value / _this.total * 100).toFixed(2);
+            _this.logMessage = "Percentage is  " + value + "% of the total";
+        }
+    }
+
+    events = {
+        dataPlotRollOver: this.getPercentValue()
+    }
+
     constructor () {
-        var myData = this.DataSource.data
+        var myData = this.dataSource.data
         this.total = 0;
 
         for (let i = 0; i < myData.length; i++) {
-            this.total+=Number(myData[i].value);
-        }
-        for(var i = 0; i < myData.length; i++) {
-            var value = Number(myData[i].value);
-
-            // var ratio = ((5 / 8) * 100);
-            var ratio = ((value / this.total) * 100).toFixed(2);
-            // var ratio = (parseFloat(value / total) * 100).toFixed(2);
-            var myString = "Ratio is : " + ratio + " %";
-            myData[i]["link"] = "JavaScript:globalContainer.log(" + ratio + ");";
+            this.total += Number(myData[i].value);
         }
         
-        this.myDataSource = this.DataSource;
+        this.myDataSource = this.dataSource;
     
     }
 
