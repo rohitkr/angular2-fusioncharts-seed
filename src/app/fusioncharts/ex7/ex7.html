@@ -3,9 +3,12 @@
     height="400"
     type="column2d"
     [dataSource]="dataSource"
-    [events]="events"
-    ></fusioncharts>
-<p>The value that you have selected is: {{ selectedValue }}</p><tabset>
-    <tab heading="HTML" title="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
-    <tab heading="Javascript" title="Javascript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
-</tabset>
+    [events]="events" >
+</fusioncharts>
+
+<p>The value that you have selected is: {{ selectedValue }}</p>
+
+<tabs>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+</tabs>

@@ -3,23 +3,12 @@
     height={{height}}
     type={{type}}
     dataFormat={{dataFormat}}
-    [dataSource]=dataSource
-    ></fusioncharts>
+    [dataSource]=dataSource >
+</fusioncharts>
+
 <p><a class="btn btn-default" (click)="updateMyChartData()">Click me to change data</a></p>
 
- <tabset>
-    <tab tabTitle="HTML" title="HTML">{{ html }}</tab>
-    <tab tabTitle="JavaScript" title="JavaScript">
-    	<pre class="language-javascript"><code ng-transclude="" class="language-javascript"> {{ js }} </code></pre>
-    </tab>
-    <tab tabTitle="JavaScript" title="JavaScript">
-    	<pre class="language-javascript">
-	    	<code ng-transclude="" class=" language-javascript">
-var test = 'Rohit';
-// console test
-console.log(test);
-	    	</code>
-    	</pre>
-	</tab>
-</tabset>
- 
+<tabs>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+</tabs>

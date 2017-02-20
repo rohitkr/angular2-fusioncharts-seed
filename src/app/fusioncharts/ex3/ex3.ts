@@ -1,20 +1,27 @@
 import {Component} from '@angular/core';
-
+// Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
+// Load charts module
 import * as Charts from 'fusioncharts/fusioncharts.charts';
+// Load Ocean theme
+import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
 
+// Pass FusionCharts as dependency to Charts module
 Charts(FusionCharts);
+
+// Pass FusionCharts as dependency to Ocean theme module
+Ocean(FusionCharts);
+
+import fcDemos from '../samplecode';
 
 @Component({
     selector: 'chart',
-    templateUrl: 'ex3.html',
-      styleUrls: [
-          '../ex.css'
-      ]
+    templateUrl: 'ex3.html'
 })
 
 export class Ex3 {
     demoId = 'ex3';
+    sampleCode = fcDemos;
     dataSource = {
         "chart": {
             "caption": "Actual Revenues, Targeted Revenues & Profits",

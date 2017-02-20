@@ -1,29 +1,29 @@
 import {Component} from '@angular/core';
 
+// Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
+// Load charts module
 import * as Charts from 'fusioncharts/fusioncharts.charts';
+// Load Ocean theme
+import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
 
+// Pass FusionCharts as dependency to Charts module
 Charts(FusionCharts);
+
+// Pass FusionCharts as dependency to Ocean theme module
+Ocean(FusionCharts);
+
+import fcDemos from '../samplecode';
+
 
 @Component({
     selector: 'chart',
-    templateUrl: 'ex10.html',
-    styles: [`
-        .log-pane{
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            border: 2px solid black;
-            font-size: 20px;
-        }
-    `]
+    templateUrl: 'ex10.html'
 })
 
 export class Ex10 {
     demoId = 'ex10';
-
-    vm = this;
+    sampleCode = fcDemos;
 
     logMessage = 'Hover on the plot to see the percentage of a column wrt total';
 
@@ -125,13 +125,12 @@ export class Ex10 {
         ]
     }
 
-    total: number
-    myDataSource = {}
+    total: number;
 
     getPercentValue() {
-        var _this = this;
+        let _this = this;
         return (eve,  arg) => {
-            var value = (arg.value / _this.total * 100).toFixed(2);
+            let value = (arg.value / _this.total * 100).toFixed(2);
             _this.logMessage = "Percentage is  " + value + "% of the total";
         }
     }
@@ -141,14 +140,14 @@ export class Ex10 {
     }
 
     constructor () {
-        var myData = this.dataSource.data
+        let myData = this.dataSource.data;
+
         this.total = 0;
 
+        // Calculate the sum of all values
         for (let i = 0; i < myData.length; i++) {
             this.total += Number(myData[i].value);
         }
-        
-        this.myDataSource = this.dataSource;
     
     }
 

@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { CodePrev } from './fusioncharts/codepreview';
-import { TabModule } from "./tabs/tab.component";
+import { TabsModule } from "angularjs2-tabs";
 
 import { Ex1 } from './fusioncharts/ex1/ex1';
 import { Ex2 } from './fusioncharts/ex2/ex2';
@@ -65,7 +65,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    TabModule,
+    TabsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [

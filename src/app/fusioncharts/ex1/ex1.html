@@ -1,14 +1,13 @@
 
-<fusioncharts 
+<fusioncharts
     width="600" 
     height="400"
     type="column2d"
     dataFormat="json"
-    [dataSource]=dataSource
-    ></fusioncharts>
+    [dataSource]=dataSource >
+</fusioncharts>
 
-<tabset>
-    <tab heading="HTML" title="HTML"><code><pre>{{ html }} This is HTML</pre></code></tab>
-    <tab heading="Javascript" title="JavaScript"> <code> <pre> {{ js }} This is JavaScript</pre></code> </tab>
-</tabset>
-
+<tabs>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+</tabs>

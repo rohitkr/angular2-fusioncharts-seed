@@ -27,6 +27,7 @@
     "@types/fusioncharts": "^3.11.0",
     "angular2-fusioncharts": "git+https://github.com/fusioncharts/angular2-fusioncharts.git",
     "angular2-in-memory-web-api": "0.0.21",
+    "angularjs2-tabs": "0.0.1-beta.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "fusioncharts": "^3.11.3-sr.1",

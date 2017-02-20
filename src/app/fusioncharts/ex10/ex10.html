@@ -1,13 +1,25 @@
+<style type="text/css">
+    .log-pane {
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        border: 2px solid black;
+        font-size: 20px;
+    }    
+</style>
+
 <fusioncharts
      width="1000"
      height="550"
      type="column2d"
      [events]="events"
-     [dataSource]="myDataSource">
+     [dataSource]="dataSource">
 </fusioncharts>
 
 <div class='log-pane'>{{logMessage}}</div>
-<tabset>
-    <tab heading="HTML" title="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
-    <tab heading="JavaScript" title="JavaScript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
-</tabset>
+
+ <tabs>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+</tabs>

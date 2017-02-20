@@ -2,11 +2,14 @@
     width="600" 
     height="400"
     type="column2d"
-    [dataSource]="dataSource"
-    ></fusioncharts>
+    [dataSource]="dataSource" >
+</fusioncharts>
+
 <p><a class="btn btn-default" (click)="changeBackgroundColor()">Change chart background color</a>
-<a class="btn btn-default" (click)="changeCaptionTextAlignment()">Make Caption text left-aligned</a>
-</p><tabset>
-    <tab heading="HTML" title="HTML"><ng-prism class="language-markup">{{ html }}</ng-prism></tab>
-    <tab heading="Javascript" title="Javascript"><ng-prism class="language-javascript">{{ js }}</ng-prism></tab>
-</tabset>
+	<a class="btn btn-default" (click)="changeCaptionTextAlignment()">Make Caption text left-aligned</a>
+</p>
+
+<tabs>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+</tabs>

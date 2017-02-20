@@ -22,7 +22,7 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { ContactComponent } from './contact/contact.component';
 
 export const rootRouterConfig: Routes = [
-  { path: '', redirectTo: 'ex6', pathMatch: 'full' },
+  { path: '', redirectTo: 'ex1', pathMatch: 'full' },
   { path: 'ex1', component: Ex1 },
   { path: 'ex2', component: Ex2 },
   { path: 'ex3', component: Ex3 },

@@ -1,20 +1,29 @@
 import {Component} from '@angular/core';
 
+// Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
+// Load charts module
 import * as Charts from 'fusioncharts/fusioncharts.charts';
+// Load Ocean theme
+import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
 
+// Pass FusionCharts as dependency to Charts module
 Charts(FusionCharts);
+// Pass FusionCharts as dependency to Ocean theme module
+Ocean(FusionCharts);
+
+import fcDemos from '../samplecode';
+
+declare var escape;
 
 @Component({
     selector: 'chart',
-    templateUrl: 'ex1.html',
-      styleUrls: [
-          '../ex.css'
-      ]
+    templateUrl: 'ex1.html'
 })
 
 export class Ex1 {
     demoId = 'ex1';
+    sampleCode = fcDemos;
     dataSource = {
         chart: {
             caption: "Harry's SuperMart",
@@ -43,7 +52,4 @@ export class Ex1 {
             value: "330000"
         }]
     };
-
 }
-
-    
