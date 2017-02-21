@@ -26,7 +26,7 @@ import { Navigation, NavService, ObservingComponent, MyAppComponent } from './ob
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { FusionChartsSample } from './fusioncharts/fusioncharts.component';
-import { FusionChartsComponent } from 'angular2-fusioncharts';
+import { FusionChartsModule } from 'angular2-fusioncharts';
 import { RepoBrowserComponent } from './github/repo-browser/repo-browser.component';
 import { RepoListComponent } from './github/repo-list/repo-list.component';
 import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
@@ -57,7 +57,6 @@ import { ContactComponent } from './contact/contact.component';
     RepoDetailComponent,
     HomeComponent,
     FusionChartsSample,
-    FusionChartsComponent,
     ContactComponent
   ],
   imports: [
@@ -66,6 +65,7 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     HttpModule,
     TabsModule,
+    FusionChartsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [

@@ -118,54 +118,55 @@
     <div class="row">
         <div class="col-md-12">
             <h2>QuickStart</h2>
-            <h3>Step 1: Include angular-fusioncharts.js</h3>
-            <p>In your HTML, include <code>angular-fusioncharts.js</code> after all other scripts:</p>
-            <pre ><code>&lt;script type="text/javascript" src="/path/to/fusioncharts.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="/path/to/angular.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="/path/to/angular-fusioncharts.js"&gt;&lt;/script&gt;</code></pre>
 
-            <h3>Step 2: Include <code>ng-fusioncharts</code> in your module</h3>
-            <p>In the app, include <code>ng-fusioncharts</code> as a dependency. If you looking for where to add the dependency, look for the call to <code>angular.module</code> in your code.</p>
-            <pre class="code-tab language-javascript"><code>angular.module("myApp", ["ng-fusioncharts"])</code></pre>
+            <h3>Step 1: Install <code>angular2-fusioncharts</code></h3>
+            <p>In the terminal run the command below</p>
+            <pre class="code-tab language-javascript"><code>$ npm install angular2-fusioncharts --save</code></pre>
+
+
+            <h3>Step 2: Import <code>angular2-fusioncharts</code> in the root @NgModule </h3>
+            <p>In the root Angular <code>@NgModule</code>, simply add the FusionChartsModule as a dependency.</p>
+            <pre class="code-tab language-javascript"><code>import {{ '{' }} NgModule } from '@angular/core';
+import {{ '{' }} BrowserModule } from '@angular/platform-browser';
+// Import the library
+import {{ '{' }} FusionChartsModule } from 'angular2-fusioncharts';
+import {{ '{' }} AppComponent } from './app.component';
+ 
+@NgModule({{ '{' }}
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule, 
+    // Specify FusionCharts library as an import
+    FusionChartsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {{ '{' }} }</code></pre>
+
+            
             <h3>Step 3: Add the <code>fusioncharts</code> directive</h3>
-            <p>In your HTML, find the section where you wish to add the chart and add a <code>&lt;div&gt;</code> with the <code>fc-chart</code> directive. We are assuming it's inside a controller called <code>MyController</code> which would change based on your usage.</p>
-            <pre class="code-tab language-javascript"><code class="ng-binding">&lt;div ng-controller="MyController"&gt;
-&lt;div fusioncharts
-width="600"
-height="400"
-type="column2d"
-dataSource="" &gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            <p>Now this is bound to a datasource with the <code>myDataSource</code> scope object.</p>
-            <h3>Step 4: Populate required variables in controller</h3>
-            <p>In the previous code, we are binding to a scope variable <code>myDataSource</code>, but that hasn't been defined yet.</p>
-            <p>In your controller, set the DataSource as you would for a regular FusionCharts JSON Format DataSource (see <a href="http://docs.fusioncharts.com/tutorial-getting-started-your-first-charts-building-your-first-chart.html">this tutorial</a> for a general introduction to this format).</p>
-            <pre class="code-tab language-javascript"><code>app.controller('MyController', function ($scope) {{ '{' }}
-    $scope.myDataSource = {{ '{' }}
-        chart: {{ '{' }}
-            caption: "Harry's SuperMart",
-            subCaption: "Top 5 stores in last month by revenue",
-        {{ '}' }},
-        data:[{{ '{' }}
-            label: "Bakersfield Central",
-            value: "880000"
-        {{ '}' }}, {{ '{' }}
-            label: "Garden Groove harbour",
-            value: "730000"
-        {{ '}' }}, {{ '{' }}
-            label: "Los Angeles Topanga",
-            value: "590000"
-        {{ '}' }}, {{ '{' }}
-            label: "Compton-Rancho Dom",
-            value: "520000"
-        {{ '}' }}, {{ '{' }}
-            label: "Daly City Serramonte",
-            value: "330000"
-        {{ '}' }}]
-    {{ '}' }}
-{{ '}' }});</code></pre>
+            <p>In your template, the section where you wish to render the chart add a <code>&lt;fusioncharts&gt;</code> directive. We are assuming it's <code>AppComponent</code> which would change based on your usage.</p>
+            <pre class="code-tab language-javascript"><code class="ng-binding">import {{ '{' }} Component } from '@angular/core';
+
+@Component({{ '{' }}
+    selector: 'my-app',
+    template: `&lt;fusioncharts
+      width="600" 
+      height="400"
+      type="column2d"
+      dataFormat="json"
+      dataSource="{{ '{' }} chart: {{ '{' }} }, data: [{{ '{' }}value: 500}, {{ '{' }}value: 600}, {{ '{' }}value: 700}] }" >
+    &lt;/fusioncharts>
+  `,
+})
+export class AppComponent {{ '{' }}
+}
+</code></pre>
             <p>And your chart should display when you load the page. </p>
+
             <h3>Licensing</h3>
             <p>Angular-FusionCharts is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>. You will still need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>) .</p>
 
@@ -173,34 +174,3 @@ dataSource="" &gt;
     </div>
 
 </div>
-
-<h3>
-  Angular 2 FusionCharts Seed
-</h3>
-<nav>
-	<a [routerLink]="['/']">
-    Home
-  </a>
-  |
-	<a [routerLink]="['/about']">
-    About
-  </a>
-  |
-	<a [routerLink]="['/github', 'angular']">
-    Github Repos
-  </a>
-  |
-  <a [routerLink]="['/fusioncharts']">
-    FusionCharts
-  </a>
-  |
-	<a [routerLink]="['/contact']">
-    Contact Us
-  </a>
-</nav>
-
-
-
-<footer>
-  © 2016
-</footer>
