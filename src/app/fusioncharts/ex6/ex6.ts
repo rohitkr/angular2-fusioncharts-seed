@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 // Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
 // Load charts module
@@ -13,6 +13,8 @@ Charts(FusionCharts);
 Ocean(FusionCharts);
 
 import fcDemos from '../samplecode';
+
+declare var Prism;
 
 @Component({
     selector: 'chart',
@@ -66,5 +68,12 @@ export class Ex6 {
 
         this.dataSource.data[3].label = "This is updated as well";
         this.dataSource.data[3].value = this.getRandomNumber();
+    }
+
+    constructor () {
+
+    }
+    ngAfterViewInit() {
+        Prism && Prism.highlightAll();
     }
 }

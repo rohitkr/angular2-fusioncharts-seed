@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 // Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
 // Load charts module
@@ -13,6 +13,8 @@ Charts(FusionCharts);
 Ocean(FusionCharts);
 
 import fcDemos from '../samplecode';
+
+declare var Prism;
 
 @Component({
     selector: 'chart',
@@ -203,4 +205,11 @@ export class Ex3 {
             }
         ]
     };
+
+    constructor () {
+
+    }
+    ngAfterViewInit() {
+        Prism && Prism.highlightAll();
+    }
 }

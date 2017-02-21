@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 
 // Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
@@ -14,14 +14,14 @@ Ocean(FusionCharts);
 
 import fcDemos from '../samplecode';
 
-declare var escape;
+declare var Prism;
 
 @Component({
     selector: 'chart',
     templateUrl: 'ex1.html'
 })
 
-export class Ex1 {
+export class Ex1 implements AfterViewInit {
     demoId = 'ex1';
     sampleCode = fcDemos;
     dataSource = {
@@ -52,4 +52,12 @@ export class Ex1 {
             value: "330000"
         }]
     };
+
+    constructor () {
+
+    }
+    ngAfterViewInit() {
+        Prism && Prism.highlightAll();
+    }
+
 }

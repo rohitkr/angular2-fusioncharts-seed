@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 // Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
 // Load charts module
@@ -14,6 +14,8 @@ Ocean(FusionCharts);
 
 import fcDemos from '../samplecode';
 
+declare var Prism;
+
 @Component({
     selector: 'chart',
     templateUrl: 'ex5.html'
@@ -22,5 +24,12 @@ import fcDemos from '../samplecode';
 export class Ex5 {
     demoId = 'ex5';
     sampleCode = fcDemos;
+
+    constructor () {
+
+    }
+    ngAfterViewInit() {
+        Prism && Prism.highlightAll();
+    }
 };
 
