@@ -1,5 +1,5 @@
-pre {
-    max-height: 400px;
+.codepreview pre {
+    height: 270px;
 }
 
 /* From the passportjs.org website */
@@ -63,3 +63,32 @@ tabset {
 	border: 1px solid #ccc;
 	border-bottom-color: #fff
 }
+
+.ng2-tabs {
+  margin-top: 20px;
+}
+
+.list-group {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 2px 0;
+}
+
+.list-group nav {
+  height: 749px;
+  overflow: auto;
+}
+
+.list-group nav .list-group-item {
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.list-group nav .list-group-item:first-child {
+  border-top: none;
+}
+
+.list-group nav .list-group-item.active {
+  background-color: #f1f1f1;
+}
+

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit} from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation} from '@angular/core';
 
 import fcDemos from '../samplecode';
 
@@ -6,10 +6,13 @@ declare var Prism;
 
 @Component({
     selector: 'chart',
+    encapsulation: ViewEncapsulation.None,
     templateUrl: 'ex4.html',
-      styleUrls: [
-          '../ex.css'
-      ]
+      styles: [`
+        .chart1 div {
+            float: left;
+        }
+      `]
 })
 
 export class Ex4 {
