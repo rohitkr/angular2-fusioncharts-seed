@@ -20,7 +20,7 @@ import { Ex6 } from './fusioncharts/ex6/ex6';
 import { Ex7 } from './fusioncharts/ex7/ex7';
 import { Ex8 } from './fusioncharts/ex8/ex8';
 import { Ex9 } from './fusioncharts/ex9/ex9';
-import { Ex10 } from './fusioncharts/ex10/ex10';
+// import { Ex10 } from './fusioncharts/ex10/ex10';
 import { Navigation, NavService, ObservingComponent, MyAppComponent } from './observable/observable.component';
 
 import { AboutComponent } from './about/about.component';
@@ -32,6 +32,13 @@ import { RepoListComponent } from './github/repo-list/repo-list.component';
 import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
+
+// Load FusionCharts
+import * as FusionCharts from 'fusioncharts';
+// Load charts module
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+// Load Ocean theme
+import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
 
 @NgModule({
   declarations: [
@@ -45,7 +52,7 @@ import { ContactComponent } from './contact/contact.component';
     Ex7,
     Ex8,
     Ex9,
-    Ex10,
+    // Ex10,
     
     Navigation, ObservingComponent, MyAppComponent,
 
@@ -65,7 +72,7 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     HttpModule,
     TabsModule,
-    FusionChartsModule,
+    FusionChartsModule.forRoot(FusionCharts, Charts, Ocean),
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [

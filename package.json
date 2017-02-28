@@ -25,7 +25,7 @@
     "@angular/router": "~3.2.1",
     "@angular/upgrade": "~2.2.1",
     "@types/fusioncharts": "^3.11.0",
-    "angular2-fusioncharts": "git+https://github.com/fusioncharts/angular2-fusioncharts.git",
+    "angular2-fusioncharts": "^1.0.2-rc.2",
     "angular2-in-memory-web-api": "0.0.21",
     "angularjs2-tabs": "0.0.1-beta.1",
     "bootstrap": "^3.3.7",

@@ -10,7 +10,7 @@ import { Ex6 } from './fusioncharts/ex6/ex6';
 import { Ex7 } from './fusioncharts/ex7/ex7';
 import { Ex8 } from './fusioncharts/ex8/ex8';
 import { Ex9 } from './fusioncharts/ex9/ex9';
-import { Ex10 } from './fusioncharts/ex10/ex10';
+// import { Ex10 } from './fusioncharts/ex10/ex10';
 import { MyAppComponent } from './observable/observable.component';
 
 import { AboutComponent } from './about/about.component';
@@ -33,7 +33,7 @@ export const rootRouterConfig: Routes = [
   { path: 'ex7', component: Ex7 },
   { path: 'ex8', component: Ex8 },
   { path: 'ex9', component: Ex9 },
-  { path: 'ex10', component: Ex10 },
+  // { path: 'ex10', component: Ex10 },
   { path: 'fusioncharts', component: MyAppComponent },
 
   { path: 'about', component: AboutComponent },

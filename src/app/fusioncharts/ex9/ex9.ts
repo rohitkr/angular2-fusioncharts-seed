@@ -1,16 +1,4 @@
 import { Component, AfterViewInit} from '@angular/core';
-// Load FusionCharts
-import * as FusionCharts from 'fusioncharts';
-// Load charts module
-import * as Charts from 'fusioncharts/fusioncharts.charts';
-// Load Ocean theme
-import * as Ocean from 'fusioncharts/themes/fusioncharts.theme.ocean';
-
-// Pass FusionCharts as dependency to Charts module
-Charts(FusionCharts);
-
-// Pass FusionCharts as dependency to Ocean theme module
-Ocean(FusionCharts);
 
 import fcDemos from '../samplecode';
 
@@ -18,171 +6,129 @@ declare var Prism;
 
 @Component({
     selector: 'chart',
-    templateUrl: 'ex9.html',
-      styleUrls: [
-          '../ex.css'
-      ]
+    templateUrl: 'ex9.html'
 })
 
 export class Ex9 {
     demoId = 'ex9';
     sampleCode = fcDemos;
 
-    dataSource = {
-        chart: {
-            "caption": "Sales - 2012 v 2013",
-            "numberprefix": "$",
-            "plotgradientcolor": "",
-            "bgcolor": "FFFFFF",
-            "showalternatehgridcolor": "0",
-            "divlinecolor": "CCCCCC",
-            "showvalues": "0",
-            "showcanvasborder": "0",
-            "canvasborderalpha": "0",
-            "canvasbordercolor": "CCCCCC",
-            "canvasborderthickness": "1",
-            "yaxismaxvalue": "30000",
-            "captionpadding": "30",
-            "linethickness": "3",
-            "yaxisvaluespadding": "15",
-            "legendshadow": "0",
-            "legendborderalpha": "0",
-            "palettecolors": "#f8bd19,#008ee4,#33bdda,#e44a00,#6baa01,#583e78",
-            "showborder": "0"
-        },
+    logMessage = 'Hover on the plot to see the percentage of a column wrt total';
 
-        categories: [
+    dataSource = {
+        "chart": {
+            "caption": "Monthly r    ue for last year",
+            "subCaption": "Harry's SuperMart",
+            "xAxisName": "Month",
+            "yAxisName": "Revenues (In USD)",
+            "numberPrefix": "$",
+            "paletteColors": "#0075c2",
+            "bgColor": "#ffffff",
+            "borderAlpha": "20",
+            "canvasBorderAlpha": "0",
+            "usePlotGradientColor": "0",
+            "plotBorderAlpha": "10",
+            "placevaluesInside": "1",
+            "rotatevalues": "1",
+            "valueFontColor": "#ffffff",                
+            "showXAxisLine": "1",
+            "xAxisLineColor": "#999999",
+            "divlineColor": "#999999",               
+            "divLineIsDashed": "1",
+            "showAlternateHGridColor": "0",
+            "subcaptionFontBold": "0",
+            "subcaptionFontSize": "14"
+        },            
+        "data": [
             {
-                "category": [
-                    {
-                        "label": "Jan"
-                    },
-                    {
-                        "label": "Feb"
-                    },
-                    {
-                        "label": "Mar"
-                    },
-                    {
-                        "label": "Apr"
-                    },
-                    {
-                        "label": "May"
-                    },
-                    {
-                        "label": "Jun"
-                    },
-                    {
-                        "label": "Jul"
-                    },
-                    {
-                        "label": "Aug"
-                    },
-                    {
-                        "label": "Sep"
-                    },
-                    {
-                        "label": "Oct"
-                    },
-                    {
-                        "label": "Nov"
-                    },
-                    {
-                        "label": "Dec"
-                    }
-                ]
+                "label": "Jan",
+                "value": "420000"
+            }, 
+            {
+                "label": "Feb",
+                "value": "810000"
+            }, 
+            {
+                "label": "Mar",
+                "value": "720000"
+            }, 
+            {
+                "label": "Apr",
+                "value": "550000"
+            }, 
+            {
+                "label": "May",
+                "value": "910000"
+            }, 
+            {
+                "label": "Jun",
+                "value": "510000"
+            }, 
+            {
+                "label": "Jul",
+                "value": "680000"
+            }, 
+            {
+                "label": "Aug",
+                "value": "620000"
+            }, 
+            {
+                "label": "Sep",
+                "value": "610000"
+            }, 
+            {
+                "label": "Oct",
+                "value": "490000"
+            }, 
+            {
+                "label": "Nov",
+                "value": "900000"
+            }, 
+            {
+                "label": "Dec",
+                "value": "730000"
             }
         ],
-
-        dataset: [
+        "trendlines": [
             {
-                "seriesname": "2013",
-                "data": [
+                "line": [
                     {
-                        "value": "22400"
-                    },
-                    {
-                        "value": "24800"
-                    },
-                    {
-                        "value": "21800"
-                    },
-                    {
-                        "value": "21800"
-                    },
-                    {
-                        "value": "24600"
-                    },
-                    {
-                        "value": "27600"
-                    },
-                    {
-                        "value": "26800"
-                    },
-                    {
-                        "value": "27700"
-                    },
-                    {
-                        "value": "23700"
-                    },
-                    {
-                        "value": "25900"
-                    },
-                    {
-                        "value": "26800"
-                    },
-                    {
-                        "value": "24800"
-                    }
-                ]
-            },
-            {
-                "seriesname": "2012",
-                "data": [
-                    {
-                        "value": "10000"
-                    },
-                    {
-                        "value": "11500"
-                    },
-                    {
-                        "value": "12500"
-                    },
-                    {
-                        "value": "15000"
-                    },
-                    {
-                        "value": "16000"
-                    },
-                    {
-                        "value": "17600"
-                    },
-                    {
-                        "value": "18800"
-                    },
-                    {
-                        "value": "19700"
-                    },
-                    {
-                        "value": "21700"
-                    },
-                    {
-                        "value": "21900"
-                    },
-                    {
-                        "value": "22900"
-                    },
-                    {
-                        "value": "20800"
+                        "startvalue": "700000",
+                        "color": "#1aaf5d",
+                        "valueOnRight": "1",
+                        "displayvalue": "Monthly Target"
                     }
                 ]
             }
         ]
     }
 
-    constructor () {
+    total: number;
 
+    getPercentValue() {
+        let _this = this;
+        return (eve,  arg) => {
+            let value = (arg.value / _this.total * 100).toFixed(2);
+            _this.logMessage = "Percentage is  " + value + "% of the total";
+        }
     }
+
+    events = {
+        dataPlotRollOver: this.getPercentValue()
+    }
+
+    constructor () {
+        let myData = this.dataSource.data;
+
+        this.total = 0;
+
+        // Calculate the sum of all values
+        for (let i = 0; i < myData.length; i++) {
+            this.total += Number(myData[i].value);
+        }
+    
+    }
+
     ngAfterViewInit() {
         Prism && Prism.highlightAll();
     }
