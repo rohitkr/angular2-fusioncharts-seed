@@ -1,5 +1,5 @@
 .codepreview pre {
-    height: 270px;
+    height: 592px;
 }
 
 /* From the passportjs.org website */
@@ -61,7 +61,7 @@ tabset {
 
 .tabset .nav-tabs li.active {
 	border: 1px solid #ccc;
-	border-bottom-color: #fff
+	border-bottom-color: #fff;
 }
 
 .ng2-tabs {
@@ -75,7 +75,7 @@ tabset {
 }
 
 .list-group nav {
-  height: 749px;
+  height: 1071px;
   overflow: auto;
 }
 
@@ -89,6 +89,7 @@ tabset {
 }
 
 .list-group nav .list-group-item.active {
+  color: #333333;
   background-color: #f1f1f1;
 }
 
