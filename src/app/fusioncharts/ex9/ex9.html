@@ -6,12 +6,13 @@
         padding-left: 10px;
         border: 2px solid black;
         font-size: 20px;
+        width: 700px;
     }    
 </style>
 
 <fusioncharts
-     width="1000"
-     height="550"
+     width="700"
+     height="400"
      type="column2d"
      [events]="events"
      [dataSource]="dataSource">
@@ -20,6 +21,6 @@
 <div class='log-pane'>{{logMessage}}</div>
 
  <tabs>
-    <tab tabTitle="HTML" title="HTML"><ng-prism class="language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
-    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
+    <tab tabTitle="HTML" title="HTML"><ng-prism class="codepreview language-html" >{{ sampleCode[demoId].html }}</ng-prism></tab>
+    <tab tabTitle="JavaScript" title="JavaScript"><ng-prism class="codepreview language-javascript" >{{ sampleCode[demoId].js }}</ng-prism></tab>
 </tabs>
