@@ -15,19 +15,18 @@
             <div class="col-md-4">
                 <h3>About Angular2-FusionCharts</h3>
                 <p>
-                This project provides Angular 2 bindings for <a href="http://fusioncharts.com">FusionCharts JavaScript Charting Library</a>. It makes adding rich, interactive charting to your Angular JS Projects easy and works in the <i>Angular Way</i>.
+                This Angular 2 component provides bindings for <a href="http://fusioncharts.com">FusionCharts JavaScript Charting Library</a>. It easily adds rich and interactive charting to your Angular JS Projects.
                 </p>
             </div>
             <div class="col-md-4 ">
                 <h3>Features</h3>
                 <!-- <p> -->
                     <ul>
-                        <li>Add a chart using just a single directive</li>
-                        <li>Auto-updates your chart object on modifying scope</li>
-                        <li>Angular-friendly events let you call controller functions directly from the chart</li>
-                        <li>Offers advanced control by giving you access to full FusionCharts object</li>
-                        <li>Has variety of ways to add a chart, from JSON URL to Scope Array Binding</li>
-                        <li>Plenty of examples and good documentation (coming soon)</li>
+                        <li>Add a chart using just a single directive.</li>
+                        <li>Auto-updates the chart object on modifying scope.</li>
+                        <li>Angular-friendly events allow you to call controller functions directly from the chart.</li>
+                        <li>Offers advanced control by giving you access to full FusionCharts object.</li>
+                        <li>Provides variety of ways to add a chart, from JSON URL to Scope Array Binding.</li>
                     </ul>
                 <!-- </p> -->
             </div>
@@ -119,7 +118,7 @@
             <h2>QuickStart</h2>
 
             <h3>Step 1: Install <code>angular2-fusioncharts</code></h3>
-            <p>In the terminal run the command below</p>
+            <p>In the terminal run the following command:</p>
             <pre class="code-tab language-javascript"><code>$ npm install angular2-fusioncharts --save</code></pre>
 
 
@@ -157,7 +156,7 @@ export class AppModule {{ '{' }} }</code></pre>
 
             
             <h3>Step 3: Add the <code>fusioncharts</code> directive</h3>
-            <p>In your template, the section where you wish to render the chart add a <code>&lt;fusioncharts&gt;</code> directive. We are assuming it's <code>AppComponent</code> which would change based on your usage.</p>
+            <p>In the template, add a <code>&lt;fusioncharts&gt;</code> directive in the section where you wish to render the chart. We are assuming it's <code>AppComponent</code> which would change based on your usage.</p>
             <pre class="code-tab language-javascript"><code class="ng-binding">import {{ '{' }} Component } from '@angular/core';
 
 @Component({{ '{' }}
@@ -186,12 +185,12 @@ export class AppComponent {{ '{' }}
   }
 }
 </code></pre>
-            <p>And your chart should display when you load the page.</p>
+            <p>The chart will render when you load the page.</p>
             <p><a href="http://plnkr.co/edit/eNdpQL?p=preview">Live Example</a></p>
 
 
             <h3>Render FusionMaps</h3>
-            <p>To render a map, import the FusionMaps module and the map definition for that map and pass as a dependency to <code>FusionChartsModule</code> in the <code>@NgModule</code>:
+            <p>To render a map, import the FusionMaps module along with the map definition. Then pass as a dependency to <code>FusionChartsModule</code> in the <code>@NgModule</code>:
 
             <pre class="code-tab language-javascript"><code class="ng-binding">import {{ '{' }} NgModule } from '@angular/core';
 import {{ '{' }} BrowserModule } from '@angular/platform-browser';
@@ -218,18 +217,18 @@ import * as WorldMap from 'fusioncharts/maps/fusioncharts.world';
     // Specify FusionChartsModule as an import 
     // and pass FusionCharts and Charts as a dependency
     // You can pass all other FusionCharts modules such as Charts, PowerCharts
-    // Maps, Widgets e.t.c. after FusionCharts
+    // Maps, Widgets etc. after FusionCharts
     FusionChartsModule.forRoot(FusionCharts, FusionMaps, WorldMap)
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {{ '{' }} }
 </code></pre>
-            <p>And your world map should display when you load the page.</p>
+            <p>The World map will render when you load the page.</p>
             <p><a href="http://plnkr.co/edit/BJVZEu?p=preview">Live Example</a></p>
 
             <h3>Licensing</h3>
-            <p>Angular-FusionCharts is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>. You will still need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>) .</p>
+            <p>Angular-FusionCharts is open-source and distributed under the terms of the MIT/X11 License. You will still need to download and include FusionCharts in your page. This project provides no direct functionality. You can <a href="http://fusioncharts.com/download/">Download an evaluation</a>. You will need to purchase a FusionCharts license to use in a commercial environment (FusionCharts is <a href="http://www.fusioncharts.com/download/free/">free for non-commercial and personal use</a>).</p>
 
         </div>
     </div>
